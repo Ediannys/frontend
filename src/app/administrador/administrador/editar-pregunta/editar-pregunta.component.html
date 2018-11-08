@@ -1,0 +1,12 @@
+<router-outlet></router-outlet>
+<form>
+  <div class="form-row">
+    <div class="col">
+      <input [(ngModel)]="var_pregunta.pregunta" id="pregunta" name="pregunta"class="form-control" placeholder="pregunta">
+    </div>
+    <div class="col">
+      <input [(ngModel)]="var_pregunta.ponderacion" id="ponderacion" name="ponderacion" class="form-control" placeholder="ponderacion">
+    </div>
+     <button mat-raised-button (click)="modificarPregunta()">Modificar</button>
+  </div>
+</form>

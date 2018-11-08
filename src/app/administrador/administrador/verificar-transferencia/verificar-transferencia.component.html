@@ -1,0 +1,45 @@
+<div id="contenedor">
+
+
+        <mat-form-field>
+            <mat-select placeholder="Cursos" [(value)]="idCurso">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let curso of arreglo_cursos"  (click)="mostrarPagosEstudiantes()" value={{curso.id}}>
+                    {{curso.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Cedula</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Curso</th>
+      <th scope="col">Transferencia</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Monto</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pc of arreglo_pc">
+      <td>{{pc.cedula}}</td>
+      <td>{{pc.apellido}}</td>
+      <td>{{pc.nombre}}</td>
+      <td>{{pc.curso}}</td>
+      <td>{{pc.transferencia}}</td>
+      <td>{{pc.fecha | date:'fullDate'}}</td>
+      <td>{{pc.monto}}</td>
+      <td>
+        <mat-slide-toggle [checked]="getPosition(pc.status)" id={{pc.id}} (click)="aprobarTransferencia(pc.id)"  >Aprobada</mat-slide-toggle>      
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

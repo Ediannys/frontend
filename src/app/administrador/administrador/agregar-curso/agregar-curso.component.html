@@ -1,0 +1,95 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Rellene</mat-card-title>
+    <mat-card-subtitle>Todos los campos</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="example-container" [formGroup]="cursoForm">
+    <mat-form-field>
+      <input matInput placeholder="Nombre" formControlName="nombre" required>
+
+      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="nombre.errors.required">
+    El nombre es requerido.
+  </div>
+  <div *ngIf="nombre.errors.maxlength">
+    El nombre debe ocupar max 19 caracteres
+  </div>
+</div>
+
+
+
+
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Descripcion" formControlName="descripcion" required></textarea>
+
+      <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="descripcion.errors.required">
+    La descripcion es requerida.
+  </div>
+  <div *ngIf="descripcion.errors.maxlength">
+    La descripcion debe ocupar max 100 caracteres
+  </div>
+</div>
+
+
+
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Inicia" formControlName="inicia" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+
+
+      <div *ngIf="inicia.invalid && (inicia.dirty || inicia.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="inicia.errors.required">
+    La Fecha de inicio es requerida.
+  </div>
+ 
+</div>
+
+
+
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" placeholder="Finaliza" formControlName="finaliza" required>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+
+           <div *ngIf="finaliza.invalid && (finaliza.dirty || finaliza.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="finaliza.errors.required">
+    La Fecha de culminacion es requerida.
+  </div>
+ 
+</div>
+
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Precio" type="number" formControlName="precio" required class="example-right-align">
+      <span matPrefix>Bs&nbsp;</span>
+
+                <div *ngIf="precio.invalid && (precio.dirty || precio.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="precio.errors.required">
+    El precio es requerido.
+  </div>
+ 
+</div>
+
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions class="boton">
+    <button mat-raised-button (click)="agregarCurso()">Agregar</button>
+  </mat-card-actions>
+</mat-card>

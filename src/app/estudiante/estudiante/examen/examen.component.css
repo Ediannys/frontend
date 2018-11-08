@@ -1,0 +1,35 @@
+.example-card {
+    margin: 30px;
+    padding: 20px;
+    border: 1px solid black;
+    font-family: 'K2D', sans-serif;
+}
+  
+.example-header-image {
+    background-image: url('../../../../assets/img/test.jpg');
+    background-size: cover;
+    border: .2px solid black;
+}
+
+.example-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+  
+.example-radio-button {
+    margin: 5px;
+}
+
+.enviar-btn {
+    width: 100%;
+    height: auto;
+    background: #0984e3;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.div {
+    border: 1px solid black;
+    margin: 10px 0;
+}

@@ -1,0 +1,37 @@
+.card {
+    margin: 15px 20px;
+    width: 50%;
+    border: 3px solid #FF8008;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.example-container > * {
+    width: 100%;
+}
+
+.boton {
+    display: flex;
+    justify-content: right;
+}
+
+.boton button {
+    color: white;
+    background: #0984e3;
+}
+
+.example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }

@@ -1,0 +1,44 @@
+<div id="contenedor">
+
+  <mat-form-field>
+    <mat-select placeholder="Profesor" [(value)]="idUsuario">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let profesor of arreglo_profesores" value={{profesor.id}}>
+        {{profesor.cedula}} {{profesor.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Cursos" [(value)]="idCurso">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let curso of arreglo_cursos" value={{curso.id}}>
+        {{curso.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-select placeholder="Secciones" [(value)]="seccion">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let s of secciones" [value]="s">
+        {{s}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Cupos" [(value)]="nCupos">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let nC of cupos" [value]="nC">
+        {{nC}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="agregarCursoProfesor()">
+    Agregar curso a profesor
+  </button>
+  
+</div>

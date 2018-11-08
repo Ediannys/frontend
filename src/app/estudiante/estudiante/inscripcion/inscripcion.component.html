@@ -1,0 +1,69 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor='let curso of cursos'>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h5><span>{{curso.nombre}}</span></h5>
+      </mat-panel-title>
+      <mat-panel-description class="descripcion">
+        <b>Haga aqui click para inscribir curso</b>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="example-container" [formGroup]="pagoForm">
+      <mat-form-field>
+        <input matInput placeholder="No Transferencia" formControlName="nTransferencia">
+        <span matPrefix>#</span>
+
+         <div *ngIf="nTransferencia.invalid && (nTransferencia.dirty || nTransferencia.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="nTransferencia.errors.required">
+    El numero de transferencia es requerido.
+  </div>
+  <div *ngIf="nTransferencia.errors.maxlength">
+    El numero de transferencia debe ocupar 8 caracteres
+  </div>
+</div>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Monto" formControlName="monto">
+        <span matSuffix>Bs.S</span>
+
+
+         <div *ngIf="monto.invalid && (monto.dirty || monto.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="monto.errors.required">
+    El monto es requerido.
+  </div>
+  <div *ngIf="monto.errors.maxlength">
+    El monto debe ocupar 6 caracteres
+  </div>
+</div>
+        
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Elija fecha" formControlName="fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+         <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="fecha.errors.required">
+    La fecha es requerida.
+  </div>
+</div>
+
+
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Seccion" formControlName="seccion">
+          <mat-option *ngFor="let seccion of curso.secciones"  [value]="seccion.id" >
+            {{seccion.seccion}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button class="btn-pagar" (click)='pagarCurso(curso.id)'>Pagar</button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

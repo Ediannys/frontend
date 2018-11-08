@@ -1,0 +1,16 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'K2D';
+}
+  
+.example-container > * {
+    width: 100%;
+}
+
+.btn-pagar {
+    background: #0984e3;
+    color: white;
+    font-family: 'K2D';
+    font-weight: bolder;
+}

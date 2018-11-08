@@ -1,0 +1,35 @@
+<mat-toolbar class="example-header">
+  <div class="avatar-box">
+    <img src="../../../assets/img/avatar.png" alt="avatar" width="35">
+  </div>
+  Bienvenido Administrador
+  <div class="salir-btn">
+    <button mat-stroked-button (click)="salir()">Salir</button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+    <h2>Elija una Opcion</h2>  
+    <div>
+      <button mat-stroked-button routerLink="/admin/agregar_p">Agregar Profesor</button>
+      <button mat-stroked-button routerLink="/admin/agregar_c">Agregar Curso</button>
+      <button mat-stroked-button routerLink="/admin/agregar_pregunta">Agregar Pregunta</button>
+      <button mat-stroked-button routerLink="/admin/eliminar_p">Editar/Eliminar Profesor</button>
+      <button mat-stroked-button routerLink="/admin/eliminar_c">Editar/Eliminar Curso</button>
+      <button mat-stroked-button routerLink="/admin/asignar_curso">Asignar Curso a Profesor</button>
+      <button mat-stroked-button routerLink="/admin/verificar_transferencia">Verificar transferencia</button>
+      <button mat-stroked-button routerLink="/admin/enviar_certificados">Enviar certificados</button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="contenedor">
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="example-footer">
+  <small>
+    <p>2018 - Ediannys Gonzalez, Manuel Meneses &copy;</p>
+  </small>
+</mat-toolbar>

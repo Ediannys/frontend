@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Actualizar Datos</mat-card-title>
+    <mat-card-subtitle>Rellene todos los campos</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="example-container">
+    <mat-form-field>
+      <input  matInput [(ngModel)]="profesor.nombre" id="username" name="username" type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <input  matInput [(ngModel)]="profesor.apellido" id="username" name="username" type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <input  matInput [(ngModel)]="profesor.cedula" id="username" name="username" type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <input  matInput [(ngModel)]="profesor.correo" id="username" name="username" type="text" />
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions class="boton">
+    <button mat-raised-button (click)="agregarProfesor()">Agregar</button>
+  </mat-card-actions>
+</mat-card>

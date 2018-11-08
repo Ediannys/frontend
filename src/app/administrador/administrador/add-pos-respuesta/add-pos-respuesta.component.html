@@ -1,0 +1,37 @@
+<router-outlet></router-outlet>
+<form>
+  <div class="form-row">
+  	 <div class="col">
+      <h4>{{var_pregunta.pregunta}}</h4>
+    </div>
+    <div class="col">
+      <input [(ngModel)]="var_respuesta.respuesta" id="respuesta" name="respuesta"class="form-control" placeholder="respuesta">
+    </div>
+     <button mat-raised-button (click)="agregarPosResp()">Agregar</button>
+  </div>
+</form>
+
+<ng-container *ngIf="show_table">
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Respuesta</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let var_respuesta of arreglo_respuestas">
+      <td><input [(ngModel)]="var_respuesta.respuesta" id={{var_respuesta.id}} name="respuesta"class="form-control" placeholder={{var_respuesta.respuesta}}></td>
+      <td> <a class="btn btn-primary btn-sm" (click)="modificarPosResp(var_respuesta.id, var_respuesta.respuesta)" >Ver/Editar</a></td>
+      <td> <a class="btn btn-primary btn-danger" (click)="eliminarPosResp(var_respuesta.id)">Eliminar</a></td>
+    </tr>
+  </tbody>
+</table>
+</ng-container>
+
+<ng-container *ngIf="show_p">
+  <p>No hay respuestas para mostrar</p>
+</ng-container>

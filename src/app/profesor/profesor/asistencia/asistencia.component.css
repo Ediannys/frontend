@@ -1,0 +1,48 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'K2D';
+}
+
+.titulo {
+    color: black;
+    text-shadow: none;
+}
+
+.example-container > * {
+    width: 100%;
+}
+
+.lista {
+    margin: 20px;
+    background: #0984e3;
+}
+
+.lista h3, h4 {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.icono {
+    color: white;
+}
+
+.calificacion {
+    color: white;
+    border: .5px solid white;
+    background: #FF8008;
+    width: 100px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.registrar-btn {
+    background: #FF8008;
+    margin-left: 10px;
+    color: white;
+}
+
+.calendario {
+    color: white;
+}

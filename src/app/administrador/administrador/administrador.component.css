@@ -1,0 +1,74 @@
+.salir-btn {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: right;
+}
+
+.example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+}
+  
+.example-sidenav {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 200px;
+    background: #0984e3;
+    color: white;
+    font-family: 'K2D', sans-serif;
+    border: 1px solid #0985e3ab;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.example-sidenav h2 {
+    width: 100%;
+    height: auto;
+}
+
+.example-sidenav button {
+    width: 100%;
+    height: auto;
+    margin: 2px 0;
+    border-right-style: none;
+    border-left-style: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.contenedor {
+    background: url('../../../assets/img/banner.jpg');
+    background-size: 100%;
+}
+
+.example-header {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FF8008;
+    color: white;
+}
+
+.avatar-box {
+    margin-right: 5px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 70px;
+}
+
+.example-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FF8008;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+  

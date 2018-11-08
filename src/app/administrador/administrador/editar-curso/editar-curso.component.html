@@ -1,0 +1,34 @@
+<router-outlet></router-outlet>
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Rellene</mat-card-title>
+    <mat-card-subtitle>Todos los campos</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="example-container" [formGroup]="cursoForm">
+    <mat-form-field>
+      <input matInput [(ngModel)]="curso.nombre" formControlName="nombre" required>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="curso.descripcion" formControlName="descripcion" required></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="curso.inicia" placeholder={{curso.inicia}} [matDatepicker]="picker"  formControlName="inicia" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="curso.finaliza" placeholder={{curso.finaliza}} datetime="yyyy-MM-dd" [matDatepicker]="picker2" formControlName="finaliza" required>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="curso.precio" type="number" formControlName="precio" required class="example-right-align">
+      <span matPrefix>Bs&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions class="boton">
+    <button mat-raised-button (click)="modificarCurso()">Actualizar</button>
+  </mat-card-actions>
+</mat-card>

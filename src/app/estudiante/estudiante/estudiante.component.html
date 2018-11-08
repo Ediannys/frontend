@@ -1,0 +1,36 @@
+<mat-toolbar class="example-header">
+  <div class="avatar-box">
+    <img src="../../../assets/img/avatar.png" alt="avatar" width="35">
+  </div>
+  Bienvenido  {{ nombre }} {{ apellido }}
+  <div class="salir-btn">
+    <button mat-stroked-button (click)="salir()">Salir</button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+    <h2>Elija una Opcion</h2>  
+    <div>
+      <button mat-stroked-button routerLink="ver_cursos">Ver Cursos</button>
+      <button mat-stroked-button routerLink="inscripcion">Inscribir Curso</button>
+    </div>
+    <div class="info-btn">
+      <button mat-flat-button routerLink="informacion"
+      matTooltip="Regresar a la vista de inicio">
+        Inicio
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="contenedor">
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="example-footer">
+  <small>
+    <p>2018 - Ediannys Gonzalez, Manuel Meneses &copy;</p>
+  </small>
+</mat-toolbar>
+

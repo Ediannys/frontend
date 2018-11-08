@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-header>
+      <mat-card-title>
+        <h3>
+          <mat-icon mat-list-icon>library_books</mat-icon>
+          Cursos Disponibles
+        </h3>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-list>
+        <mat-list-item *ngFor="let curso of cursos">
+          <mat-icon mat-list-icon>class</mat-icon>
+          <h3 mat-line> <strong>Nombre:</strong> {{curso.nombre}}</h3>
+          <p mat-line> <strong>Descripcion:</strong> {{curso.descripcion}}</p>
+          <p mat-line> <strong>Inicia:</strong> {{curso.fechaInicio | date}}</p>
+          <p mat-line> <strong>Finaliza:</strong> {{curso.fechaFinal | date}}</p>
+          <p mat-line> <strong>Precio:</strong> {{curso.precio}}
+            <span matSuffix>Bs&nbsp;</span>
+          </p>
+          <button mat-raised-button class="preinscripcion-btn"
+          routerLink="examen/{{curso.id}}" routerLinkActive="active">
+          Aspirar
+        </button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

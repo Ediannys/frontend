@@ -1,0 +1,60 @@
+<div class="container">
+    <img src="../../../assets/img/avatar.png" alt="Avatar" class="avatar">
+    <h2 mat-dialog-title>Rellene los Campos</h2>
+    
+    <mat-dialog-content class="example-container" [formGroup]="userForm">
+        <mat-form-field>
+            <input matInput placeholder="Nombre"  formControlName="nombre" required>
+
+             <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+            class="alert alert-danger">
+
+            <div *ngIf="nombre.errors.required">
+                El nombre es requerido.
+            </div>
+        </div>
+
+
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apellido"  formControlName="apellido" required>
+
+
+            <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)"
+            class="alert alert-danger">
+
+            <div *ngIf="apellido.errors.required">
+                El apellido es requerido.
+            </div>
+        </div>
+
+
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cedula"  formControlName="cedula" required>
+
+            <div *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)"
+            class="alert alert-danger">
+
+            <div *ngIf="cedula.errors.required">
+                La cedula es requerida.
+            </div>
+        </div>
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Correo" formControlName="correo" required>
+            <mat-error *ngIf="userForm.get('correo').invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cotraseña" formControlName="contraseña" required>
+        </mat-form-field>
+    </mat-dialog-content>
+        
+    <mat-dialog-actions class="left">
+        <button class="mat-raised-button" (click)="ingresar()">Ingresar</button>
+        <button class="mat-raised-button" (click)="cerrar()">Cerrar</button>
+    </mat-dialog-actions>
+</div>

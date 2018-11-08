@@ -1,0 +1,36 @@
+
+
+        <mat-form-field>
+            <mat-select placeholder="Cursos" [(value)]="idCurso">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let curso of arreglo_cursos" value={{curso.id}} (click)="mostrarEstAprobados()">
+                    {{curso.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Cedula</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Curso</th>
+      <th scope="col">Correo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pc of arreglo_est">
+      <td>{{pc.cedula}}</td>
+      <td>{{pc.apellido}}</td>
+      <td>{{pc.nombre}}</td>
+      <td>{{pc.curso}}</td>
+      <td>{{pc.correo}}</td>
+      <td>
+        <mat-slide-toggle [checked]="getPosition(pc.certificado)" id={{pc.id}} (click)="enviarCertificado(pc.id)">Enviado</mat-slide-toggle>      
+      </td>
+    </tr>
+  </tbody>
+</table>

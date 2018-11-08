@@ -1,0 +1,30 @@
+<div class="container">
+    <img src="../../../assets/img/avatar.png" alt="Avatar" class="avatar">
+    <h2 mat-dialog-title>Ingrese Sus Datos</h2>
+    
+    <mat-dialog-content class="example-container" [formGroup]="userForm">
+        <mat-form-field>
+            <input matInput placeholder="Correo" formControlName="correo" required>
+            
+            <div *ngIf="correo.invalid && (correo.dirty || correo.touched)"
+            class="alert alert-danger">
+
+            <div *ngIf="correo.errors.required">
+                El correo es requerido.
+            </div>
+        </div>
+  
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cotraseña" formControlName="contraseña" required>
+
+            
+        </mat-form-field>
+    </mat-dialog-content>
+        
+    <mat-dialog-actions class="left">
+        <button class="mat-raised-button" (click)="ingresar()">Ingresar</button>
+        <button class="mat-raised-button" (click)="cerrar()">Cerrar</button>
+    </mat-dialog-actions>
+</div>

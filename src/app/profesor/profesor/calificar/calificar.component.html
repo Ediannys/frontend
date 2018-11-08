@@ -1,0 +1,33 @@
+<mat-card>
+  <form class="example-container" [formGroup]="cursoForm">
+    <h4 class="titulo">Listar Estudiantes de un curso</h4>
+    <mat-form-field>
+      <mat-select placeholder="Elejir curso" formControlName="idSeccion">
+        <mat-option *ngFor="let curso of curso_seccion" [value]="curso.idSeccion">
+          Curso: {{curso.Curso}} - Seccion: {{curso.Seccion}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="estudiantesSeccion()">Listar Estudiantes</button>
+  </form>
+</mat-card>
+<mat-card class="lista">
+  <mat-list>
+    <h3 mat-subheader>Estudiantes</h3>
+    <mat-list-item *ngFor="let estudiante of estudiantes; let i = index">
+      <mat-icon mat-list-icon class="icono">account_circle</mat-icon>
+      <h4 mat-line>{{estudiante.nombre}} {{estudiante.apellido}}</h4>
+      <h4 mat-line>{{estudiante.cedula}}</h4>
+      <mat-button-toggle-group>
+        <mat-button-toggle  class="calificacion" (click)='desabilitar_R(estudiante.id)'>
+          <h6>AP</h6>
+        </mat-button-toggle>
+        <mat-button-toggle class="calificacion" (click)='desabilitar_A(estudiante.id)'>
+          <h6>RP</h6>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</mat-card>
+

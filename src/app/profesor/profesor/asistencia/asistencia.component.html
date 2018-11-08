@@ -1,0 +1,30 @@
+<mat-card>
+    <form class="example-container" [formGroup]="cursoForm">
+      <h4 class="titulo">Listar Estudiantes de un curso</h4>
+      <mat-form-field>
+        <mat-select placeholder="Elejir curso" formControlName="idSeccion">
+          <mat-option *ngFor="let curso of curso_seccion" [value]="curso.idSeccion">
+            Curso: {{curso.Curso}} - Seccion: {{curso.Seccion}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button (click)="estudiantesSeccion()">Listar Estudiantes</button>
+    </form>
+  </mat-card>
+  <mat-card class="lista">
+    <mat-list>
+      <h3 mat-subheader>Estudiantes</h3>
+      <mat-list-item *ngFor="let estudiante of estudiantes; let i = index">
+        <mat-icon mat-list-icon class="icono">account_circle</mat-icon>
+        <h4 mat-line>{{estudiante.nombre}} {{estudiante.apellido}}</h4>
+        <h4 mat-line>{{estudiante.cedula}}</h4>
+        <mat-form-field class="calendario" [formGroup]="fechaForm">
+            <input matInput [matDatepicker]="picker" placeholder="Elejir fecha" formControlName="fecha" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button mat-button class="registrar-btn" (click)="registrarAsistencia(estudiante.id)">Registrar</button>         
+        </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-card>  
